@@ -1,8 +1,99 @@
 1. 객체 지향에 대해 논하시오.
+	하나의 프로그램을 만들 때 세부적인 작동을 담당하는 코드들을 따로 관리 할 수 있도록 코드의 목적에 따라서 분류를 하여, 분류 	된 코드들을 따로 제작하고 완성 전에 조립하는 방식.
 
 2. 지뢰 찾기를 만드시오
  - 알고있는 내용 모두 사용해서.
+#define 10 LAND_MAIN
+#define 11 SAFE
+	int map[5,10] = {0};
+	int x,y,count=0;
+	srand(time(NULL));
+	for(int i=0; i<5; i++)
+	{
+		x = rand %5;
+		y = rand%10;
+		map[x,y] = LAND_MAIN;
+	}
+	while(1)
+	{
+		for(int X=0; X<5; X++)
+		{
+			for(int Y=0; Y<10; Y++)
+			{	
+				if(map[X,Y] == SAFE)
+					printf("□");
+				if(map[X,Y]==0)
+					printf("■",)
+				if(map[X,Y]>0 && map[X,Y]<SAFE)
+					printf("%d",map[X,Y]);
+			}
+		}
+		printf("좌표를 입력하세요 :");
+		scanf(%d,x);
+		scanf(%d,y);
+		if(map[x,y]==SAFE)
+		{
+			for(int i=x-1; i<=x+1; i++)
+			{
+				for(int j=y-1; j<=y+1; j++)
+				{
+					if(map[i,j] ==LAND_MAIN)
+						count++;
+				}
+			}
+			if(count == 0)
+			{
+				for(int i=x-1; i<=x+1; i++)
+				{
+					for(int j=y-1; j<=y+1; j++)
+					{
+						map[i,j]=SAFE;
+					}
+				}	
+			}	
+			else
+				map[x,y]=count;
+			count = 0;
+		}
+		else if(map[x,y]==LAND_MAIN)
+		{
+			printf("앗! 지뢰입니다. -GAME OVER-");
+			system("pause");
+			return;
+		}
+		
+	}
 
 3. 미로찾기를 자신이 컨트롤하는 것이 아닌 미로탐색을 
 시작점부터 스스로해서 빠져나가는 어플리케이션을 만드시오.
  - 알고있는 내용 모두 사용해서.
+#define 1 WALL
+#define 2 ME
+#define 5 CLEAR
+
+	int map[15,10] =
+	{1,1,2,1,1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,1,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,1,0,0,0,0,0,0,0,0,0,0,1},
+	{1,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,1,1,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+	{1,1,1,1,1,1,1,1,1,1,1,1,5,1,1}
+	int x,y;
+	while(1)
+	{
+		for(int X=0; X<15; X++)
+		{
+			for(int Y=0; Y<15; Y++)
+			{	
+				if(map[X,Y] == 1)
+					printf("▦");
+
+			}
+		}
+	}
+
+
