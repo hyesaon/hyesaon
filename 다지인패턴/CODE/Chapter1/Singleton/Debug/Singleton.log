@@ -1,0 +1,20 @@
+﻿  Int.cpp
+  IntManager.cpp
+c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\singleton.h(7): error C2864: 'Singleton<IntManager>::m_pThis': in-class initializer가 있는 정적 데이터 멤버은(는) volatile이 아닌 const 정수 형식을 포함하거나 'inline'으로 지정되어야 합니다.
+  c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\singleton.h(7): note: 'T *' 형식입니다.
+          with
+          [
+              T=IntManager
+          ]
+  c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\intmanager.h(7): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Singleton<IntManager>'에 대한 참조를 확인하세요.
+c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\intmanager.cpp(3): warning C4356: 'Singleton<IntManager>::m_pThis': 정적 데이터 멤버는 파생 클래스를 통해 초기화할 수 없습니다.
+  main.cpp
+c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\singleton.h(7): error C2864: 'Singleton<IntManager>::m_pThis': in-class initializer가 있는 정적 데이터 멤버은(는) volatile이 아닌 const 정수 형식을 포함하거나 'inline'으로 지정되어야 합니다.
+  c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\singleton.h(7): note: 'T *' 형식입니다.
+          with
+          [
+              T=IntManager
+          ]
+  c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\intmanager.h(7): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Singleton<IntManager>'에 대한 참조를 확인하세요.
+c:\users\a-01\desktop\프로그래밍학ppt\자료구조디자인패턴\디자인패턴\chapter1\singleton\main.cpp(5): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  코드를 생성하고 있습니다...
