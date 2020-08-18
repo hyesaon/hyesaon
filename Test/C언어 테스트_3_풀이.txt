@@ -10,109 +10,130 @@
 #define LAND_MAIN 10	
 #define SAFE 11
 
-void find_land_main(int map[][10],int x,int y)
+void find_land_main(int map[][10], int x, int y)
 {
-	if (x < 0 || x>10 || y < 0 || y>10)
-	{
-		return;
-	}
-
 	int count = 0;
-	for (int i = x - 1; i <= x + 1; i++)
+	int ro;
+	if (x >= 0 && x<10 && y >= 0 && y<5) //8방탐색
 	{
-		for (int j = y - 1; j <= y + 1; j++)
+		for (int Y = y - 1; Y <= y + 1; Y++)
 		{
-			if (i >= 0 && i < 5 && j >= 0 && j < 10)
+			for (int X = x - 1; X <= x + 1; X++)
 			{
-				if (map[i][j] != LAND_MAIN)
+				if (X >= 0 && X < 5 && X >= 0 && X < 10)
 				{
-					map[i][j] = SAFE;
+					if (map[Y][X] == LAND_MAIN)
+						count++;
 				}
-				else if (map[i][j] == LAND_MAIN)
-					count++;
 			}
 		}
-	}
 
-	if (count > 0)
-		map[x][y] = count;
-	else
-	{
-		find_land_main(map, x-1, y);
-		find_land_main(map, x, y-1);
-		find_land_main(map, x+1, y);
-		find_land_main(map, x, y+1);
-		find_land_main(map, x-1, y-1);
-		find_land_main(map, x+1, y+1);
-		find_land_main(map, x-1, y+1);
-		find_land_main(map, x+1, y-1);
+		if (count > 0)
+		{
+			map[y][x] = count;
+			return;
+		}
+		else
+		{
+			map[y][x] = SAFE;
+			for (int Y = y - 1; Y <= y + 1; Y++) //그리기
+			{
+				for (int X = x - 1; X <= x + 1; X++)
+				{
+					if (X >= 0 && X < 5 && X >= 0 && X < 10)
+					{
+						if (map[Y][X] < 1)
+						{
+							map[Y][X] = SAFE;
+						}
+					}
+				}
+			}
+
+			if (x > 1 && x < 8 && y > 1 && y < 3) //8방의 8방탐색
+			{
+
+				find_land_main(map, x - 1, y);
+				find_land_main(map, x, y - 1);
+				find_land_main(map, x + 1, y);
+				find_land_main(map, x, y + 1);
+				find_land_main(map, x - 1, y - 1);
+				find_land_main(map, x + 1, y + 1);
+				find_land_main(map, x - 1, y + 1);
+				find_land_main(map, x + 1, y - 1);
+			}
+		}
 	}
 }
 
 void main()
 {
 	int map[5][10] = { 0 };
-	int x, y;
+	int x, y,wincount = 0;
 	srand(time(NULL));
 	for (int i = 0; i < 5; i++)
 	{
-		x = (rand() % 5);
-		y = (rand() % 10);
-		map[x][y] = LAND_MAIN;
+		x = (rand() % 10);
+		y = (rand() % 5);
+		map[y][x] = LAND_MAIN;
 	}
 
-	for (int X = 0; X < 5; X++)
-	{
-		for (int Y = 0; Y < 10; Y++)
-		{
-			printf("[%d]", map[X][Y]);
-		}
-		printf("\n");
-	}
-	system("pause");
 	while (1)
 	{
 		system("cls");
-		for (int X = 0; X < 5; X++)
+		for (int Y = 0; Y < 5; Y++)
 		{
-			for (int Y = 0; Y < 10; Y++)
+			for (int X = 0; X < 10; X++)
 			{
-				if (map[X][Y] == SAFE)
-					printf(" □");
-				else if (map[X][Y] == 0 || map[X][Y] == LAND_MAIN)
-					printf(" ■");
-				else if (map[X][Y] > 0 && map[X][Y] < SAFE)
-					printf("[%d]", map[X][Y]);
+				if (map[Y][X] == SAFE)
+					printf("□");
+				else if (map[Y][X] == 0 /*|| map[Y][X] == LAND_MAIN*/)
+					printf("■");
+				else if(map[Y][X] == LAND_MAIN)
+					printf("※");
+				else if (map[Y][X] > 0 && map[Y][X] < SAFE)
+					printf(" %d", map[Y][X]);
 			}
 			printf("\n");
 		}
-		printf("좌표를 입력하세요 \n");
-		printf("X :");
-		scanf("%d", &x);
-		printf("Y :");
-		scanf("%d",&y);
-		if (map[x][y] != LAND_MAIN)
+		while (1)
+		{
+			printf("좌표를 입력하세요 \n");
+			printf("X :");
+			scanf("%d", &x);
+			printf("Y :");
+			scanf("%d", &y);
+			if (x < 10 && x >= 0 && y<5 && y >= 0)
+			{
+				break;
+			}
+			printf("다시입력 \n");
+		}
+		if (map[y][x] != LAND_MAIN)
 		{
 			find_land_main(map, x, y);
 		}
-		else if (map[x][y] == LAND_MAIN)
+		else if (map[y][x] == LAND_MAIN)
 		{
 			printf("\n 앗! 지뢰입니다. -GAME OVER- \n");
 			system("pause");
 			return;
 		}
-
-		for (int X = 0; X < 5; X++)
+		//승리체크
+		for (int Y = 0; Y < 5; Y++)
 		{
-			for (int Y = 0; Y < 10; Y++)
+			for (int X = 0; X < 10; X++)
 			{
-				if (map[X][Y] == 0)
+				if (map[y][X] == 0)
 				{
-					//승리체크?
+					wincount++;
 				}
 			}
 		}
-
+		if (wincount > 0)
+			wincount = 0;
+		else
+			printf("\n 지뢰찾기 승리! - Win - \n");
 	}
 }
 3. 미로찾기를 자신이 컨트롤하는 것이 아닌 미로탐색을 
