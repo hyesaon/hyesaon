@@ -3,68 +3,118 @@
 
 2. 지뢰 찾기를 만드시오
  - 알고있는 내용 모두 사용해서.
-#define 10 LAND_MAIN
-#define 11 SAFE
-	int map[5,10] = {0};
-	int x,y,count=0;
-	srand(time(NULL));
-	for(int i=0; i<5; i++)
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#define LAND_MAIN 10	
+#define SAFE 11
+
+void find_land_main(int map[][10],int x,int y)
+{
+	if (x < 0 || x>10 || y < 0 || y>10)
 	{
-		x = rand %5;
-		y = rand%10;
-		map[x,y] = LAND_MAIN;
+		return;
 	}
-	while(1)
+
+	int count = 0;
+	for (int i = x - 1; i <= x + 1; i++)
 	{
-		for(int X=0; X<5; X++)
+		for (int j = y - 1; j <= y + 1; j++)
 		{
-			for(int Y=0; Y<10; Y++)
-			{	
-				if(map[X,Y] == SAFE)
-					printf("□");
-				if(map[X,Y]==0)
-					printf("■",)
-				if(map[X,Y]>0 && map[X,Y]<SAFE)
-					printf("%d",map[X,Y]);
-			}
-		}
-		printf("좌표를 입력하세요 :");
-		scanf(%d,x);
-		scanf(%d,y);
-		if(map[x,y]==SAFE)
-		{
-			for(int i=x-1; i<=x+1; i++)
+			if (i >= 0 && i < 5 && j >= 0 && j < 10)
 			{
-				for(int j=y-1; j<=y+1; j++)
+				if (map[i][j] != LAND_MAIN)
 				{
-					if(map[i,j] ==LAND_MAIN)
-						count++;
+					map[i][j] = SAFE;
 				}
+				else if (map[i][j] == LAND_MAIN)
+					count++;
 			}
-			if(count == 0)
-			{
-				for(int i=x-1; i<=x+1; i++)
-				{
-					for(int j=y-1; j<=y+1; j++)
-					{
-						map[i,j]=SAFE;
-					}
-					printf("\n");
-				}	
-			}	
-			else
-				map[x,y]=count;
-			count = 0;
 		}
-		else if(map[x,y]==LAND_MAIN)
+	}
+
+	if (count > 0)
+		map[x][y] = count;
+	else
+	{
+		find_land_main(map, x-1, y);
+		find_land_main(map, x, y-1);
+		find_land_main(map, x+1, y);
+		find_land_main(map, x, y+1);
+		find_land_main(map, x-1, y-1);
+		find_land_main(map, x+1, y+1);
+		find_land_main(map, x-1, y+1);
+		find_land_main(map, x+1, y-1);
+	}
+}
+
+void main()
+{
+	int map[5][10] = { 0 };
+	int x, y;
+	srand(time(NULL));
+	for (int i = 0; i < 5; i++)
+	{
+		x = (rand() % 5);
+		y = (rand() % 10);
+		map[x][y] = LAND_MAIN;
+	}
+
+	for (int X = 0; X < 5; X++)
+	{
+		for (int Y = 0; Y < 10; Y++)
 		{
-			printf("앗! 지뢰입니다. -GAME OVER-");
+			printf("[%d]", map[X][Y]);
+		}
+		printf("\n");
+	}
+	system("pause");
+	while (1)
+	{
+		system("cls");
+		for (int X = 0; X < 5; X++)
+		{
+			for (int Y = 0; Y < 10; Y++)
+			{
+				if (map[X][Y] == SAFE)
+					printf(" □");
+				else if (map[X][Y] == 0 || map[X][Y] == LAND_MAIN)
+					printf(" ■");
+				else if (map[X][Y] > 0 && map[X][Y] < SAFE)
+					printf("[%d]", map[X][Y]);
+			}
+			printf("\n");
+		}
+		printf("좌표를 입력하세요 \n");
+		printf("X :");
+		scanf("%d", &x);
+		printf("Y :");
+		scanf("%d",&y);
+		if (map[x][y] != LAND_MAIN)
+		{
+			find_land_main(map, x, y);
+		}
+		else if (map[x][y] == LAND_MAIN)
+		{
+			printf("\n 앗! 지뢰입니다. -GAME OVER- \n");
 			system("pause");
 			return;
 		}
-		
-	}
 
+		for (int X = 0; X < 5; X++)
+		{
+			for (int Y = 0; Y < 10; Y++)
+			{
+				if (map[X][Y] == 0)
+				{
+					//승리체크?
+				}
+			}
+		}
+
+	}
+}
 3. 미로찾기를 자신이 컨트롤하는 것이 아닌 미로탐색을 
 시작점부터 스스로해서 빠져나가는 어플리케이션을 만드시오.
  - 알고있는 내용 모두 사용해서.
