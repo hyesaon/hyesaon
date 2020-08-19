@@ -32,7 +32,7 @@ void up_date(int map[][10], int x, int y)
 	{
 		land_main = find_land_main(map, x, y);
 		if (land_main == 0)
-		{	
+		{
 			//원래 코드의 문제 : 
 			//1. 12(SAFE)일때도 탐색을 한다>무한탐색
 			//2. 마지막에 SAFE를 넣으면 자기자신은 SAFE가 되지 않아 자기자신을 계속 탐색(무한반복)
@@ -79,10 +79,8 @@ void main()
 			{
 				if (map[Y][X] == SAFE)
 					printf("□");
-				else if (map[Y][X] == 0 /*|| map[Y][X] == LAND_MAIN*/)
+				else if (map[Y][X] == 0 || map[Y][X] == LAND_MAIN)
 					printf("■");
-				else if (map[Y][X] == LAND_MAIN)
-					printf("※");
 				else if (map[Y][X] > 0 && map[Y][X] < SAFE)
 					printf(" %d", map[Y][X]);
 			}
