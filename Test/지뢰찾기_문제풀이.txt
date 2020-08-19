@@ -1,0 +1,129 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#define LAND_MAIN 10	
+#define SAFE 11
+
+int find_land_main(int map[][10], int x, int y)
+{
+	int count = 0;
+	if (y < 0 || y > 4 || x < 0 || x > 9)
+		return 0;
+
+	for (int Y = y - 1; Y <= y + 1; Y++)
+	{
+		for (int X = x - 1; X <= x + 1; X++)
+		{
+			if (Y >= 0 && Y < 5 && X >= 0 && X < 10)
+			{
+				if (map[Y][X] == LAND_MAIN)
+					count++;
+			}
+		}
+	}
+	return count;
+}
+
+void up_date(int map[][10], int x, int y)
+{
+	int land_main = 0;
+	if (x >= 0 && x < 10 && y >= 0 && y < 5)
+	{
+		land_main = find_land_main(map, x, y);
+		if (land_main == 0)
+		{	
+			//원래 코드의 문제 : 
+			//1. 12(SAFE)일때도 탐색을 한다>무한탐색
+			//2. 마지막에 SAFE를 넣으면 자기자신은 SAFE가 되지 않아 자기자신을 계속 탐색(무한반복)
+			//해서 위의 무한반복에 빠져 메모리가 오버된다.
+			if (map[y][x] == 0) //SAFE와 지뢰는 0이 아니므로 확인대상에서 제외
+			{
+				map[y][x] = SAFE;	//자신을 SAFE로 만들어 확인대상에서 제외(0인걸 확인할 때 마다 이걸 표시
+				up_date(map, x - 1, y);
+				up_date(map, x + 1, y);
+				up_date(map, x + 1, y);
+				up_date(map, x, y - 1);
+				up_date(map, x, y + 1);
+				up_date(map, x - 1, y - 1);
+				up_date(map, x + 1, y + 1);
+				up_date(map, x + 1, y - 1);
+				up_date(map, x - 1, y + 1);
+			}
+		}
+		else
+		{
+			map[y][x] = land_main;
+		}
+	}
+}
+
+void main()
+{
+	int map[5][10] = { 0 };
+	int x, y, wincount = 0;
+	srand(time(NULL));
+	for (int i = 0; i < 5; i++)
+	{
+		x = (rand() % 10);
+		y = (rand() % 5);
+		map[y][x] = LAND_MAIN;
+	}
+
+	while (1)
+	{
+		system("cls");
+		for (int Y = 0; Y < 5; Y++)
+		{
+			for (int X = 0; X < 10; X++)
+			{
+				if (map[Y][X] == SAFE)
+					printf("□");
+				else if (map[Y][X] == 0 /*|| map[Y][X] == LAND_MAIN*/)
+					printf("■");
+				else if (map[Y][X] == LAND_MAIN)
+					printf("※");
+				else if (map[Y][X] > 0 && map[Y][X] < SAFE)
+					printf(" %d", map[Y][X]);
+			}
+			printf("\n");
+		}
+		while (1)
+		{
+			printf("좌표를 입력하세요 \n");
+			printf("X :");
+			scanf("%d", &x);
+			printf("Y :");
+			scanf("%d", &y);
+			if (x < 10 && x >= 0 && y < 5 && y >= 0)
+			{
+				break;
+			}
+			printf("다시입력 \n");
+		}
+		if (map[y][x] != LAND_MAIN)
+		{
+			up_date(map, x, y);
+		}
+		else if (map[y][x] == LAND_MAIN)
+		{
+			printf("\n 앗! 지뢰입니다. -GAME OVER- \n");
+			system("pause");
+			return;
+		}
+		for (int Y = 0; Y < 5; Y++)
+		{
+			for (int X = 0; X < 10; X++)
+			{
+				if (map[y][X] == 0)
+				{
+					wincount++;
+				}
+			}
+		}
+		if (wincount > 0)
+			wincount = 0;
+		else
+			printf("\n 지뢰찾기 승리! - Win - \n");
+	}
+}
