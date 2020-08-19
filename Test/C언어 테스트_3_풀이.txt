@@ -10,58 +10,47 @@
 #define LAND_MAIN 10	
 #define SAFE 11
 
-void find_land_main(int map[][10], int x, int y)
+int find_land_main(int map[][10], int x, int y)
 {
 	int count = 0;
-	int ro;
-	if (x >= 0 && x<10 && y >= 0 && y<5) //8规沤祸
+	if (y < 0 || y > 4 || x < 0 || x > 9)
+		return 0;
+
+	for (int Y = y - 1; Y <= y + 1; Y++)
 	{
-		for (int Y = y - 1; Y <= y + 1; Y++)
+		for (int X = x - 1; X <= x + 1; X++)
 		{
-			for (int X = x - 1; X <= x + 1; X++)
+			if (Y >= 0 && Y < 5 && X >= 0 && X < 10)
 			{
-				if (X >= 0 && X < 5 && X >= 0 && X < 10)
-				{
-					if (map[Y][X] == LAND_MAIN)
-						count++;
-				}
+				if (map[Y][X] == LAND_MAIN)
+					count++;
 			}
 		}
+	}
+	return count;
+}
 
-		if (count > 0)
+void up_date(int map[][10], int x, int y)
+{
+	int land_main = 0;
+	if (x >= 0 && x < 10 && y >= 0 && y < 5)
+	{
+		land_main = find_land_main(map, x, y);
+		if (land_main == 0)
 		{
-			map[y][x] = count;
-			return;
+			map[y][x] = SAFE;
+			//up_date(map, x - 1, y);
+			//up_date(map, x + 1, y);
+			//up_date(map, x, y - 1);
+			//up_date(map, x, y + 1);
+			//up_date(map, x - 1, y - 1);
+			//up_date(map, x + 1, y + 1);
+			//up_date(map, x + 1, y - 1);
+			//up_date(map, x - 1, y + 1);
 		}
 		else
 		{
-			map[y][x] = SAFE;
-			for (int Y = y - 1; Y <= y + 1; Y++) //弊府扁
-			{
-				for (int X = x - 1; X <= x + 1; X++)
-				{
-					if (X >= 0 && X < 5 && X >= 0 && X < 10)
-					{
-						if (map[Y][X] < 1)
-						{
-							map[Y][X] = SAFE;
-						}
-					}
-				}
-			}
-
-			if (x > 1 && x < 8 && y > 1 && y < 3) //8规狼 8规沤祸
-			{
-
-				find_land_main(map, x - 1, y);
-				find_land_main(map, x, y - 1);
-				find_land_main(map, x + 1, y);
-				find_land_main(map, x, y + 1);
-				find_land_main(map, x - 1, y - 1);
-				find_land_main(map, x + 1, y + 1);
-				find_land_main(map, x - 1, y + 1);
-				find_land_main(map, x + 1, y - 1);
-			}
+			map[y][x] = land_main;
 		}
 	}
 }
@@ -111,7 +100,7 @@ void main()
 		}
 		if (map[y][x] != LAND_MAIN)
 		{
-			find_land_main(map, x, y);
+			up_date(map, x, y);
 		}
 		else if (map[y][x] == LAND_MAIN)
 		{
@@ -119,7 +108,6 @@ void main()
 			system("pause");
 			return;
 		}
-		//铰府眉农
 		for (int Y = 0; Y < 5; Y++)
 		{
 			for (int X = 0; X < 10; X++)
