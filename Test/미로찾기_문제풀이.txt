@@ -47,7 +47,8 @@ bool move(int map[][15],int x, int y,
 			(*character_Y).push(y);
 			map[y][x] = 0;
 			x += 1;
-			if (!move(map, x, y, character_X, character_Y)) //작성중
+			//작성중. 자신의 앞.양옆만을 탐색하고 지나온 자리(스텍에 저장되어있는)는 탐색하지않는다!
+			if (!move(map, x, y, character_X, character_Y)) 
 			{
 				x -= 1;
 				y += 1;
