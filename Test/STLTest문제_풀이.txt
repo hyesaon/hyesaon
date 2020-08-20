@@ -1,23 +1,47 @@
 1.func(10, 20, 30) 세 인자를받는 연산자 오버로딩 함수로 선언하시요
-operlater ..?
+int& operlater(int a,int b,int c){ return  c };
 
 
 2.다음 구문이 컴파일 될 수 있게 최소한의 String클래스를 작성하시오
 
-Class String
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
+#include<Windows.h>
+
+class String
 {
 private:
 	char m_ch[100];
-	const char con_m_ch[100];
 public:
-	String(){};
-	String(char ch[100]){m_ch=ch;};
-	String(const char ch[100]){} : con_m_ch(ch);
-	~String(){};
-}
+	String() { m_ch[100] = NULL; }
+	String(char ch[100]) 
+	{
+		int i;
+		for (i = 0; ch[i] != NULL; i++)
+		{
+			m_ch[i] = ch[i];
+		}
+		m_ch[i] = NULL;
+	}
+	String(const char ch[100]) 
+	{ 
+		int i;
+		for (i = 0; ch[i] != NULL; i++)
+		{
+			m_ch[i] = ch[i];
+		}
+		m_ch[i] = NULL;
+	};
+	char* c_str()
+	{
+		return m_ch;
+	}
+	~String() {};
+};
+
 
 2-1.String s("Hello!");
-const char* sz = s;
+const char* sz = s.c_str();
 
 
 2-2.const char* sz = "Hello!";
