@@ -32,14 +32,14 @@ void map_draw(int map[][15])
 bool move(int map[][15], int* x, int* y,
 	std::stack<int>* character_X, std::stack<int>* character_Y)
 {
-	static int last_rocation = 0 ;
+	static int last_rocation = 0;
 	if (last_rocation == 2)
 		return true;
 	if (*x >= 0 && *x < 15 && *y >= 0 && *y < 10)
 	{
 		//자신의 앞.양옆만을 탐색하고 지나온 자리(스텍에 저장되어있는)는 탐색하지않는다
 		if (*x + 1 < 15 && (map[*y][*x + 1] == 0 || map[*y][*x + 1] == 2)
-			/*&& map[*y][*x + 1] != map[character_X->top()][character_Y->top()]*/)
+			&& map[*y][*x + 1] != map[character_Y->top()][character_X->top()])
 		{
 			(*character_X).push(*x);
 			(*character_Y).push(*y);
@@ -48,7 +48,7 @@ bool move(int map[][15], int* x, int* y,
 			last_rocation = map[*y][*x];
 		}
 		else if (*y + 1 < 10 && (map[*y + 1][*x] == 0 || map[*y + 1][*x] == 2)
-			/*&& map[*y + 1][*x] != map[character_X->top()][character_Y->top()]*/)
+			&& map[*y + 1][*x] != map[character_Y->top()][character_X->top()])
 		{
 			(*character_X).push(*x);
 			(*character_Y).push(*y);
@@ -57,7 +57,7 @@ bool move(int map[][15], int* x, int* y,
 			last_rocation = map[*y][*x];
 		}
 		else if (*x - 1 > 0 && (map[*y][*x - 1] == 0 || map[*y][*x - 1] == 2)
-			/*&& map[*y][*x - 1] != map[character_X->top()][character_Y->top()]*/)
+			&& map[*y][*x - 1] != map[character_Y->top()][character_X->top()])
 		{
 			(*character_X).push(*x);
 			(*character_Y).push(*y);
@@ -66,7 +66,7 @@ bool move(int map[][15], int* x, int* y,
 			last_rocation = map[*y][*x];
 		}
 		else if (*y - 1 > 0 && (map[*y - 1][*x] == 0 || map[*y - 1][*x] == 2)
-			/*&& map[*y - 1][*x] != map[character_X->top()][character_Y->top()]*/)
+			&& map[*y - 1][*x] != map[character_Y->top()][character_X->top()])
 		{
 			(*character_X).push(*x);
 			(*character_Y).push(*y);
