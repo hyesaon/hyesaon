@@ -300,7 +300,10 @@ v1을 v2에 복사를 한 뒤 v1과 v2의 합을 v3로 출력하는 코드를 작성하시오.
 vector<int> v2는 20,70,40의 순차열을 가지는 원소를 가지고 있고 size는 3이다.
 v1과 v2를 v3으로 합병하는 코드를 작성하시오.
 	
-	v3.insert(v3.begin(),v1)
+	vector<int> v3(v1.size()+v2.size()); //크기 지정해줘야함
+	sort(v1.begin(), v1.end());
+	sort(v2.begin(), v2.end());
+	merge(v1.begin(), v1.end(), v2.begin(), v2.end(), v3.begin());
 
 
 22.vector<int> v1은 10,20,30,40,50,60,70,80,90,100의 순차열을 가지는 원소를 가지고 있다.
@@ -315,10 +318,13 @@ v1을 다음과 같은 순차열을 가지게 만드는 코드를 작성하시오 ==> 70,80,90,100,10,20
  가지는 원소를 가지고 있다.
 v1 + v2의 합집합을 v3에 출력하는 코드를 작성하시오.
 
-	vector<int> v3(v1.size() + v2.size());
+	vector<int> v3(v1.size() + v2.size()); //크기 지정해줘야함
+	sort(v1.begin(), v1.end());
+	sort(v2.begin(), v2.end()); //하기전에 오름차순 정렬. 
+
 	auto iter = set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), v3.begin());
-	v3.erase(iter, v3.end());
-	
+	v3.erase(iter, v3.end());	//v3.resize(iter- v3.begin()); 이렇게 쓸 수도 있다.
+				ㄴ>erase(지울 범위,지울 대상); (지울 대상만 적어도 됨) / 크기를 재정의 할 대상.resize(크기);
 
 
 24.양방향 반복자와 임의 접근 반복자의 차이점을 설명하시오.
