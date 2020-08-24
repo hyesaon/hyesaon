@@ -142,10 +142,12 @@
     <ClCompile Include="Int.cpp" />
     <ClCompile Include="IntManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="makesingelton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Int.h" />
     <ClInclude Include="IntManager.h" />
+    <ClInclude Include="makesingelton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

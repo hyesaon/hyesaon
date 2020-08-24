@@ -1,7 +1,5 @@
 #include "IntManager.h"
 
-IntManager* IntManager::m_hThis = NULL;
-
 IntManager::IntManager()
 {
 }

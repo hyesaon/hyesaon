@@ -1,5 +1,7 @@
 #include "Std_Manager.h"
 
+Std_manager* Std_manager::m_This = NULL;
+
 Std_manager::Std_manager()
 {
 	for (int i = 0; i < 30; i++)
@@ -21,19 +23,19 @@ void Std_manager::display() {
 		cin >> sel;
 		switch (sel) {
 		case 1:
-			setStudent();
+			Std_manager::GetInstance()->setStudent();
 			break;
 		case 2:
-			showStudent();
+			Std_manager::GetInstance()->showStudent();
 			break;
 		case 3:
-			findNumber();
+			Std_manager::GetInstance()->findNumber();
 			break;
 		case 4:
-			findname();
+			Std_manager::GetInstance()->findname();
 			break;
 		case 5:
-			findClass();
+			Std_manager::GetInstance()->findClass();
 			break;
 		case 0:return;
 		default:cout << "잘못 입력 " << endl;
