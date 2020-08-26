@@ -9,6 +9,4 @@ void main()
 	srand(time(NULL));
 	ORIGINAL
 		PlayManeger::GetInstance()->Menu();
-
-	
 }
