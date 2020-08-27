@@ -1,0 +1,91 @@
+﻿  소스.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\소스.cpp(7): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Weapon.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\weapon.cpp(7): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\weapon.cpp(28): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\weapon.cpp(36): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\weapon.cpp(53): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\weapon.cpp(55): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\weapon.cpp(71): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  Wand.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Sword.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  People.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\people.cpp(34): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\people.cpp(67): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\people.cpp(69): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\people.cpp(71): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\people.cpp(73): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  MapDraw.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.cpp(37): warning C4267: '-=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.cpp(98): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+  Manager.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(99): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(110): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(124): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(137): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(150): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(241): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(253): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(281): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(282): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(284): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(285): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(292): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(293): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(408): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(419): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(534): warning C4553: '==': 의미 없는 연산자입니다. '='을(를) 사용하려고 했습니까?
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(490): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(492): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\manager.cpp(597): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+  Hammer.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Gun.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Dagger.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Bow.cpp
+c:\users\b-4\documents\visual studio 2015\projects\rpg게임만들기0522\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  코드를 생성하고 있습니다...
+  LINK : C:\Users\B-4\Documents\Visual Studio 2015\Projects\RPG게임만들기0522\x64\Debug\RPG게임만들기.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  RPG게임만들기.vcxproj -> C:\Users\B-4\Documents\Visual Studio 2015\Projects\RPG게임만들기0522\x64\Debug\RPG게임만들기.exe
+  RPG게임만들기.vcxproj -> C:\Users\B-4\Documents\Visual Studio 2015\Projects\RPG게임만들기0522\x64\Debug\RPG게임만들기.pdb (Full PDB)
