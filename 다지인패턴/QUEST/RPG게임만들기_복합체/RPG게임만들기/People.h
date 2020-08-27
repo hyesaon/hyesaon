@@ -2,12 +2,6 @@
 #include"Mecro.h"
 #include"Weapon.h"
 #include"MapDraw.h"
-#include"Bow.h"
-#include"Dagger.h"
-#include"Gun.h"
-#include"Hammer.h"
-#include"Sword.h"
-#include"Wand.h"
 
 enum THISIS
 {
@@ -28,10 +22,9 @@ private:
 	int m_iNowEXP;
 	int m_iMaxEXP;
 	int m_iGiveEXP;
-	Weapon* m_MyWeapon;
+	Weapon* m_MyWeapon; //장비
 public:
 	People();
-	//공격력 변화,인벤토리,생명력변화,경험치 변화,골드 변화,레벨업 함수 필요
 	void Showinfo(int x, int y);
 	inline string OutName()
 	{
@@ -43,7 +36,7 @@ public:
 	}
 	void Buy_Weapon(int price);
 	void SetPeople(ifstream* Load, THISIS who);
-	void TakeWeapon(Weapon* weapon, string type);
+	void TakeWeapon(Inventory* weapon, string type);
 	void SetPlayerName(string Name);
 	void SavePeople(ofstream* Save);
 	void LoadPeople(ifstream* Load, THISIS who);

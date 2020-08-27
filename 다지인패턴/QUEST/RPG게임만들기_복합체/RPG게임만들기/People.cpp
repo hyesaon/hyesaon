@@ -79,37 +79,41 @@ void People::Showinfo(int x, int y)
 	}
 }
 
-void People::TakeWeapon(Weapon* weapon, string type)
+void People::TakeWeapon(Inventory* weapon, string type)
 {
+	if (weapon == NULL)
+		return;
+
 	if (m_MyWeapon != NULL)
 		delete m_MyWeapon;
 
 	m_MyWeapon = NULL;
+	Buy_Weapon(weapon->OutPrise(0));
 	if (m_MyWeapon == NULL)
 	{
-		if (type == "검")
+		if (type == "Sword")
 		{
-			m_MyWeapon = new Sword(weapon);
+			m_MyWeapon = new Sword((Weapon*)weapon);
 		}
-		if (type == "총")
+		if (type == "Gun")
 		{
-			m_MyWeapon = new Gun(weapon);
+			m_MyWeapon = new Gun((Weapon*)weapon);
 		}
-		if (type == "활")
+		if (type == "Bow")
 		{
-			m_MyWeapon = new Bow(weapon);
+			m_MyWeapon = new Bow((Weapon*)weapon);
 		}
-		if (type == "대거")
+		if (type == "Dagger")
 		{
-			m_MyWeapon = new Dagger(weapon);
+			m_MyWeapon = new Dagger((Weapon*)weapon);
 		}
-		if (type == "해머")
+		if (type == "Hammer")
 		{
-			m_MyWeapon = new Hammer(weapon);
+			m_MyWeapon = new Hammer((Weapon*)weapon);
 		}
-		if (type == "완드")
+		if (type == "Wand")
 		{
-			m_MyWeapon = new Wand(weapon);
+			m_MyWeapon = new Wand((Weapon*)weapon);
 		}
 	}
 }

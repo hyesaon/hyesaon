@@ -14,9 +14,10 @@ private:
 	People* Monster;
 	People Player;
 	int m_imonster_num;
-	Weapon** m_WeaponBox;
-	Weapon* Load_Weapon;
+	Inventory* ItemBox;
+	Inventory* WeaponBox;
 	int m_iWeaponNum;
+
 protected:
 	void GameSet();
 	void SaveLoad(string saveorload);

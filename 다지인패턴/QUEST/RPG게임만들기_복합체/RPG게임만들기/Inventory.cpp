@@ -1,23 +1,60 @@
 #include "Inventory.h"
 
-/*
-	void Add(Inventory* Inventory) override;
-	inventory->SetParent(this);	inventoryList.push_back(inventory);
-	void Remove(Inventory* Inventory) override;
-	vector<Inventory*>::iterator remove = find(inventoryList.begin(), inventoryList.end(), inventory);
+void Inventory::Set_Parent(Inventory* parent)
+{
+	m_parent = parent;
+}
+Inventory* Inventory::Get_parent()
+{
+	return m_parent;
+}
 
-	if (remove != inventoryList.end())
+const string Inventory::Out_Inventory_name()
+{
+	return m_name;
+}
+
+void Bag::Add(Inventory* Inventory)
+{
+	Inventory->Set_Parent(this);
+	Inventory_List.push_back(Inventory);
+}
+
+void Bag::Remove(Inventory* m_Inventory)
+{
+	vector<Inventory*>::iterator remove = find(Inventory_List.begin(), Inventory_List.end(), m_Inventory);
+
+	if (remove != Inventory_List.end())
 	{
-		inventoryList.erase(remove);
+		Inventory_List.erase(remove);
 	}
-	정의 해주고,
+}
 
-	매니저에서
-		인벤토리* 메인 하나 만든다음,
-		인벤토리* 각 무기가방 만들고
-		로드할때 인벤토리 * 뉴 무기(로드 매계변수);
-		각 무기가방에 Add 무기들
-		무기가방을 메인에 Add
-		> 무기상점에서 무기들 불러올 때 무기 가방만 불러오면됨
-			검가방->Inventory_List[순서] > 접근
-*/
+int Bag::Out_Inventory_size()
+{
+	return Inventory_List.size();
+}
+
+Inventory* Bag::Find_Inventory(string name)
+{
+	vector<Inventory*>::iterator find = Inventory_List.begin();
+
+	for (find; find != Inventory_List.end(); find++)
+	{
+		if ((*find)->Out_Inventory_name() == name)
+			return *find;
+	}
+	return NULL;
+}
+
+bool Bag::ShowInfo(int shownum , int x, int y, string name)
+{
+	for (int i = shownum, line = y; i < Inventory_List.size() && i < shownum + 4; i++)
+	{
+		if (Inventory_List[i]->ShowInfo(shownum, x, line, Inventory_List[i]->Out_Inventory_name()) == true)
+		{
+			line += 3;
+		}
+	}
+	return true;
+}

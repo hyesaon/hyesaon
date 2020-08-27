@@ -22,10 +22,10 @@ Weapon::Weapon(string Name, int attack, int prise) : Inventory(Name)
 	}
 }
 
-Weapon::Weapon(Weapon* tmp) : Inventory(tmp->m_chrName)
+Weapon::Weapon(Weapon* tmp) : Inventory(tmp->Out_Inventory_name())
 {
 	SetType(tmp->m_chrtype);
-	strcpy(m_chrName, tmp->m_chrName);
+	strcpy(m_chrName, tmp->Out_Inventory_name().c_str());
 	m_iAttact = tmp->m_iAttact;
 	m_iPrise = tmp->m_iPrise;
 	m_iSkill = tmp->m_iSkill;
@@ -45,10 +45,10 @@ bool Weapon::CheckWeapone(string name)
 	return false;
 }
 
-bool Weapon::ShowInfo(int x, int y, string name)
+bool Weapon::ShowInfo(int shownum, int x, int y, string name)
 {
 	char info[100];
-	if (name == m_chrtype)
+	if (name == m_chrName)
 	{
 		sprintf(info, "가격 : %d 무기타입 : %s", m_iPrise, m_chrtype);
 		m_Draw.DrawMidText(info, x, y);

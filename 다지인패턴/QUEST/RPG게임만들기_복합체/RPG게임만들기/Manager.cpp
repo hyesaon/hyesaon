@@ -4,7 +4,9 @@
 
 Manager::Manager()
 {
-	Load_Weapon = NULL;
+	ItemBox = new Bag("Main Box");
+	WeaponBox = new Bag("Weapon Box");
+	ItemBox->Add(WeaponBox);
 	m_iWindowX = WIDTH;
 	m_iWindowY = HEIGHT;
 	m_imonster_num = 0;
@@ -42,12 +44,20 @@ void Manager::GameSet()
 	int attack;
 	int prise;
 
+	Inventory* SwordBox = new Bag("Sword Box");
+	Inventory* DaggerBox = new Bag("Dagger Box");
+	Inventory* BowBox = new Bag("Bow Box");
+	Inventory* GunBox = new Bag("Gun Box");
+	Inventory* HammerBox = new Bag("Hammer Box");
+	Inventory* WandBox = new Bag("Wand Box");
+
+	Inventory* Weapone;
+
 
 	Load.open("WeaponList.txt");
 	if (Load.is_open())
 	{
 		Load >> m_iWeaponNum;
-		m_WeaponBox = new Weapon*[m_iWeaponNum];
 		for (int i = 0; i< m_iWeaponNum && !Load.eof(); i++)
 		{
 			Load >> WeaponName;
@@ -57,35 +67,41 @@ void Manager::GameSet()
 
 			if (WeaponName == "Dagger")
 			{
-				m_WeaponBox[i] = new Dagger(Name, attack, prise);
-				m_WeaponBox[i] = m_WeaponBox[i];
+				Weapone = new Dagger(Name, attack, prise);
+				DaggerBox->Add(Weapone);
 			}
 			if (WeaponName == "Bow")
 			{
-				m_WeaponBox[i] = new Bow(Name, attack, prise);
-				m_WeaponBox[i] = m_WeaponBox[i];
+				Weapone = new Bow(Name, attack, prise);
+				BowBox->Add(Weapone);
 			}
 			if (WeaponName == "Gun")
 			{
-				m_WeaponBox[i] = new Gun(Name, attack, prise);
-				m_WeaponBox[i] = m_WeaponBox[i];
+				Weapone = new Gun(Name, attack, prise);
+				GunBox->Add(Weapone);
 			}
 			if (WeaponName == "Sword")
 			{
-				m_WeaponBox[i] = new Sword(Name, attack, prise);
-				m_WeaponBox[i] = m_WeaponBox[i];
+				Weapone = new Sword(Name, attack, prise);
+				SwordBox->Add(Weapone);
 			}
 			if (WeaponName == "Wand")
 			{
-				m_WeaponBox[i] = new Wand(Name, attack, prise);
-				m_WeaponBox[i] = m_WeaponBox[i];
+				Weapone = new Wand(Name, attack, prise);
+				HammerBox->Add(Weapone);
 			}
 			if (WeaponName == "Hammer")
 			{
-				m_WeaponBox[i] = new Hammer(Name, attack, prise);
-				m_WeaponBox[i] = m_WeaponBox[i];
+				Weapone = new Hammer(Name, attack, prise);
+				WandBox->Add(Weapone);
 			}
 		}
+		WeaponBox->Add(DaggerBox);
+		WeaponBox->Add(BowBox);
+		WeaponBox->Add(GunBox);
+		WeaponBox->Add(SwordBox);
+		WeaponBox->Add(HammerBox);
+		WeaponBox->Add(WandBox);
 	}
 	Load.close();
 }
@@ -126,12 +142,22 @@ void Manager::Save(int Slot)
 
 void Manager::Load(int Slot)
 {
+	Weapon* Load_Weapon = NULL;
 	ifstream Load;
 	string WeaponName;
 	string weapon_type;
 	string name;
 	int attack;
 	int prise;
+
+	Inventory* SwordBox = new Bag("Sword Box");
+	Inventory* DaggerBox = new Bag("Dagger Box");
+	Inventory* BowBox = new Bag("Bow Box");
+	Inventory* GunBox = new Bag("Gun Box");
+	Inventory* HammerBox = new Bag("Hammer Box");
+	Inventory* WandBox = new Bag("Wand Box");
+
+	Inventory* Weapone;
 
 	char filename[100];
 	sprintf(filename, "SaveMonster%d.txt", Slot);
@@ -158,27 +184,27 @@ void Manager::Load(int Slot)
 				Load >> name;
 				Load >> attack;
 				Load >> prise;
-				if (weapon_type == "검")
+				if (weapon_type == "Sword")
 				{
 					Load_Weapon = new Sword(name, attack, prise);
 				}
-				if (weapon_type == "활")
+				if (weapon_type == "Bow")
 				{
 					Load_Weapon = new Bow(name, attack, prise);
 				}
-				if (weapon_type == "총")
+				if (weapon_type == "Gun")
 				{
 					Load_Weapon = new Gun(name, attack, prise);
 				}
-				if (weapon_type == "해머")
+				if (weapon_type == "Hammer")
 				{
 					Load_Weapon = new Hammer(name, attack, prise);
 				}
-				if (weapon_type == "완드")
+				if (weapon_type == "Wand")
 				{
 					Load_Weapon = new Wand(name, attack, prise);
 				}
-				if (weapon_type == "대거")
+				if (weapon_type == "Dagger")
 				{
 					Load_Weapon = new Dagger(name, attack, prise);
 				}
@@ -191,7 +217,6 @@ void Manager::Load(int Slot)
 		if (Load.is_open())
 		{
 			Load >> m_iWeaponNum;
-			m_WeaponBox = new Weapon*[m_iWeaponNum];
 			for (int i = 0; i< m_iWeaponNum && !Load.eof(); i++)
 			{
 				Load >> WeaponName;
@@ -201,35 +226,41 @@ void Manager::Load(int Slot)
 
 				if (WeaponName == "Dagger")
 				{
-					m_WeaponBox[i] = new Dagger(name, attack, prise);
-					m_WeaponBox[i] = m_WeaponBox[i];
+					Weapone = new Dagger(name, attack, prise);
+					DaggerBox->Add(Weapone);
 				}
 				if (WeaponName == "Bow")
 				{
-					m_WeaponBox[i] = new Bow(name, attack, prise);
-					m_WeaponBox[i] = m_WeaponBox[i];
+					Weapone = new Bow(name, attack, prise);
+					BowBox->Add(Weapone);
 				}
 				if (WeaponName == "Gun")
 				{
-					m_WeaponBox[i] = new Gun(name, attack, prise);
-					m_WeaponBox[i] = m_WeaponBox[i];
+					Weapone = new Gun(name, attack, prise);
+					GunBox->Add(Weapone);
 				}
 				if (WeaponName == "Sword")
 				{
-					m_WeaponBox[i] = new Sword(name, attack, prise);
-					m_WeaponBox[i] = m_WeaponBox[i];
+					Weapone = new Sword(name, attack, prise);
+					SwordBox->Add(Weapone);
 				}
 				if (WeaponName == "Wand")
 				{
-					m_WeaponBox[i] = new Wand(name, attack, prise);
-					m_WeaponBox[i] = m_WeaponBox[i];
+					Weapone = new Wand(name, attack, prise);
+					HammerBox->Add(Weapone);
 				}
 				if (WeaponName == "Hammer")
 				{
-					m_WeaponBox[i] = new Hammer(name, attack, prise);
-					m_WeaponBox[i] = m_WeaponBox[i];
+					Weapone = new Hammer(name, attack, prise);
+					WandBox->Add(Weapone);
 				}
 			}
+			WeaponBox->Add(DaggerBox);
+			WeaponBox->Add(BowBox);
+			WeaponBox->Add(GunBox);
+			WeaponBox->Add(SwordBox);
+			WeaponBox->Add(HammerBox);
+			WeaponBox->Add(WandBox);
 		}
 		Load.close();
 
@@ -425,17 +456,9 @@ void Manager::GamePlay()
 			SaveLoad("save");
 			break;
 		case 6:
-			for (int i = 0; i < m_iWeaponNum; i++)
-			{
-				delete m_WeaponBox[i];
-			}
-			delete[] m_WeaponBox;
+			delete WeaponBox;
+			WeaponBox = new Bag("Weapon Box");
 			delete[] Monster;
-			if (Load_Weapon != NULL)
-			{
-				delete Load_Weapon;
-				Load_Weapon = NULL;
-			}
 			Player.Delete_My_Weapon();
 			Gmae_Menu_flag = false;
 			return;
@@ -523,13 +546,13 @@ void Manager::Dongeon(int Monnum)
 				DrawMidText("보", m_iWindowX, m_iWindowY / 2 + 4);
 				break;
 			}
-			if (Player.MY_Weapontype("해머") && Player.Weapon_Attack2(m_iWindowX, m_iWindowY / 2 - 1) == true)
+			if (Player.MY_Weapontype("Hammer") && Player.Weapon_Attack2(m_iWindowX, m_iWindowY / 2 - 1) == true)
 			{
 				DrawMidText("행동불능", m_iWindowX, m_iWindowY / 2 + 4);
 				control = 4;
 			}
 		RED
-			if (Player.MY_Weapontype("총") && Player.Weapon_Attack2(m_iWindowX, m_iWindowY / 2 - 1) == true)
+			if (Player.MY_Weapontype("Gun") && Player.Weapon_Attack2(m_iWindowX, m_iWindowY / 2 - 1) == true)
 			{
 				Battle_flag == false;
 			}
@@ -567,7 +590,7 @@ void Manager::Dongeon(int Monnum)
 					DrawMidText("DRAW", m_iWindowX, m_iWindowY / 2 + 3);
 				}
 
-				if (Player.MY_Weapontype("완드"))
+				if (Player.MY_Weapontype("Wand"))
 				{
 					if (Player.Weapon_Attack2(m_iWindowX, m_iWindowY / 2 - 1) == true)
 						Player.Heal();
@@ -625,22 +648,22 @@ void Manager::Weapon_shop()
 		switch (select)
 		{
 		case 1:
-			Shop_page("대거");
+			Shop_page("Dagger");
 			break;
 		case 2:
-			Shop_page("검");
+			Shop_page("Sword");
 			break;
 		case 3:
-			Shop_page("활");
+			Shop_page("Bow");
 			break;
 		case 4:
-			Shop_page("해머");
+			Shop_page("Hammer");
 			break;
 		case 5:
-			Shop_page("완드");
+			Shop_page("Wand");
 			break;
 		case 6:
-			Shop_page("총");
+			Shop_page("Gun");
 			break;
 		default:
 			shop_flag = false;
@@ -654,52 +677,31 @@ void Manager::Shop_page(string name)
 {
 	int i = 0;
 	int select;
-	int weaponeNum = 0;
+	int weaponeNum;
 	int buy_weapon = 0;
 	int show_num = 0;
 	int page = 0;
-	string shopname = name;
 	bool flag = true;
-	for (int i = 0; i < m_iWeaponNum; i++)
-	{
-		if (m_WeaponBox[i]->CheckWeapone(name))
-		{
-			weaponeNum++;
-		}
-	}
-	Weapon** ShopList = new Weapon*[weaponeNum];
-	for (int i = 0, j= 0; i < m_iWeaponNum; i++)
-	{
-		if (m_WeaponBox[i]->CheckWeapone(name))
-		{
-			ShopList[j] = m_WeaponBox[i];
-			j++;
-		}
-	}
+	Inventory* tmp = WeaponBox->Find_Inventory(name+" Box");
+	weaponeNum = tmp->Out_Inventory_size();
 	while (flag == true)
 	{
 		system("cls");
 		YELLOW
-			BoxDraw(0, 0, m_iWindowX, m_iWindowY);
+		BoxDraw(0, 0, m_iWindowX, m_iWindowY);
 		ORIGINAL
-
-			TextDraw("보유 GOLD : ", m_iWindowX / 2 + 8, m_iWindowY / 2 - 13);
+		TextDraw("보유 GOLD : ", m_iWindowX / 2 + 8, m_iWindowY / 2 - 13);
 		cout << Player.OutGold();
 		TextDraw(name, m_iWindowX / 2 + 12, m_iWindowY / 2 - 11);
 		cout << " 목록";
 		YELLOW
-			for (int i = show_num, line = m_iWindowY / 2 - 7; i < weaponeNum && i < show_num + 4; i++)
-			{
-				if (ShopList[i]->ShowInfo(m_iWindowX - 2, line, name) == true)
-				{
-					line += 3;
-				}
-			}
+			tmp->ShowInfo(show_num, m_iWindowX - 2, m_iWindowY / 2 - 7, name);
 		ORIGINAL
-			DrawMidText("이전 페이지", m_iWindowX, m_iWindowY / 2 + 6);
+		DrawMidText("이전 페이지", m_iWindowX, m_iWindowY / 2 + 6);
 		DrawMidText("다음 페이지", m_iWindowX, m_iWindowY / 2 + 9);
 		DrawMidText("나가기", m_iWindowX, m_iWindowY / 2 + 12);
 		select = MenuSelectCursor(7, 3, m_iWindowX / 2 - 10, m_iWindowY / 2 - 6);
+
 		switch (select)
 		{
 		case 1:
@@ -707,10 +709,11 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1;
 			else if(page > 0)
 				buy_weapon = select - 1 + (4 * page);
+			if (buy_weapon >= weaponeNum)
+				break;
 			if (Player.OutGold() > 0)
 			{
-				Player.Buy_Weapon(ShopList[buy_weapon]->OutPrise());
-				Player.TakeWeapon(ShopList[buy_weapon], name);
+				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
 		case 2:
@@ -718,10 +721,11 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1;
 			else if (page > 0)
 				buy_weapon = select - 1 + (4 * page);
+			if (buy_weapon >= weaponeNum)
+				break;
 			if (Player.OutGold() > 0)
 			{
-				Player.Buy_Weapon(ShopList[buy_weapon]->OutPrise());
-				Player.TakeWeapon(ShopList[buy_weapon], name);
+				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
 		case 3:
@@ -729,10 +733,11 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1;
 			else if (page > 0)
 				buy_weapon = select - 1 + (4 * page);
+			if (buy_weapon >= weaponeNum)
+				break;
 			if (Player.OutGold() > 0)
 			{
-				Player.Buy_Weapon(ShopList[buy_weapon]->OutPrise());
-				Player.TakeWeapon(ShopList[buy_weapon], name);
+				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
 		case 4:
@@ -740,10 +745,11 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1;
 			else if (page > 0)
 				buy_weapon = select - 1 + (4 * page);
+			if (buy_weapon >= weaponeNum)
+				break;
 			if (Player.OutGold() > 0)
 			{
-				Player.Buy_Weapon(ShopList[buy_weapon]->OutPrise());
-				Player.TakeWeapon(ShopList[buy_weapon], name);
+				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
 		case 5:
@@ -761,7 +767,6 @@ void Manager::Shop_page(string name)
 			show_num += 4;
 			break;
 		case 7:
-			delete[] ShopList;
 			flag = false;
 			break;
 		}
