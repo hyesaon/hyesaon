@@ -16,6 +16,7 @@ public:
 	virtual bool ShowInfo(int shownum ,int x, int y, string name) = 0;
 	virtual int Out_Inventory_size() { return 0; };
 	virtual int OutPrise(int num) { return 0; };
+	virtual void Save(ofstream* Save) {};
 
 	virtual Inventory* OutItem(int num)
 	{
@@ -38,6 +39,7 @@ public:
 	void Remove(Inventory* Inventory) override;
 	Inventory* Find_Inventory(string name) override;
 	bool ShowInfo(int shownum ,int x, int y, string name) override;
+	void Save(ofstream* Save);
 	virtual int Out_Inventory_size();
 	virtual int OutPrise(int num)
 	{

@@ -14,6 +14,14 @@ const string Inventory::Out_Inventory_name()
 	return m_name;
 }
 
+void Bag::Save(ofstream* Save)
+{
+	for (int i = 0; i < Inventory_List.size(); i++)
+	{
+		Inventory_List[i]->Save(Save);
+	}
+}
+
 void Bag::Add(Inventory* Inventory)
 {
 	Inventory->Set_Parent(this);

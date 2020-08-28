@@ -59,7 +59,7 @@ bool Weapon::ShowInfo(int shownum, int x, int y, string name)
 	return false;
 }
 
-void Weapon::SaveWeapon(ofstream* Save)
+void Weapon::Save(ofstream* Save)
 {
 	*Save << endl << m_chrtype << " " << m_chrName << " " << m_iAttact << " " << m_iPrise;
 }

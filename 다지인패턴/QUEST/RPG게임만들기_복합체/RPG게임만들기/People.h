@@ -3,6 +3,8 @@
 #include"Weapon.h"
 #include"MapDraw.h"
 
+#define I 105
+
 enum THISIS
 {
 	THISIS_PLAYER = 1,
@@ -22,6 +24,7 @@ private:
 	int m_iNowEXP;
 	int m_iMaxEXP;
 	int m_iGiveEXP;
+	Inventory* MainBox; //플레이어 전용 인벤토리
 	Weapon* m_MyWeapon; //장비
 public:
 	People();
@@ -38,8 +41,12 @@ public:
 	void SetPeople(ifstream* Load, THISIS who);
 	void TakeWeapon(Inventory* weapon, string type);
 	void SetPlayerName(string Name);
+	void Reset_Inventory();
+	void Load_Inventory(Weapon* Weapon);
 	void SavePeople(ofstream* Save);
 	void LoadPeople(ifstream* Load, THISIS who);
+	void Take_On_Weapone(Inventory* Weapones);
+	void View_My_Inventory();
 	inline int Go_Attack()
 	{
 		return m_iattack;

@@ -26,7 +26,7 @@ public:
 	virtual string ShowMyWeapon(); //구매시 플레이어 인포에서 보여줄 무기설명
 	virtual int SkillAttack(int x,int y) = 0; //특수기 사용 int
 	virtual bool SkillAttack2(int x, int y) = 0; //특수기 사용 bool
-	virtual void SaveWeapon(ofstream* Save);
+	void Save(ofstream* Save);
 	virtual string OutType(int num)
 	{
 		return m_chrtype;

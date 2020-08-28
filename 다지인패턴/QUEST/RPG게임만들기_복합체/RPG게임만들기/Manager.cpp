@@ -209,6 +209,39 @@ void Manager::Load(int Slot)
 					Load_Weapon = new Dagger(name, attack, prise);
 				}
 				Player.TakeWeapon(Load_Weapon, weapon_type);
+				Player.Reset_Inventory();
+				while (!Load.eof())
+				{
+					Load >> weapon_type;
+					Load >> name;
+					Load >> attack;
+					Load >> prise;
+					if (weapon_type == "Sword")
+					{
+						Load_Weapon = new Sword(name, attack, prise);
+					}
+					if (weapon_type == "Bow")
+					{
+						Load_Weapon = new Bow(name, attack, prise);
+					}
+					if (weapon_type == "Gun")
+					{
+						Load_Weapon = new Gun(name, attack, prise);
+					}
+					if (weapon_type == "Hammer")
+					{
+						Load_Weapon = new Hammer(name, attack, prise);
+					}
+					if (weapon_type == "Wand")
+					{
+						Load_Weapon = new Wand(name, attack, prise);
+					}
+					if (weapon_type == "Dagger")
+					{
+						Load_Weapon = new Dagger(name, attack, prise);
+					}
+					Player.Load_Inventory(Load_Weapon);
+				}
 			}
 			Load.close();
 		}
@@ -431,12 +464,7 @@ void Manager::GamePlay()
 			Dongeon_index();
 			break;
 		case 2:
-			system("cls");
-			YELLOW
-				BoxDraw(0, 0, m_iWindowX, m_iWindowY);
 			Player.Showinfo(m_iWindowX, m_iWindowY / 2 - 2);
-			ORIGINAL
-			getch();
 			break;
 		case 3:
 			system("cls");
@@ -723,8 +751,9 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1 + (4 * page);
 			if (buy_weapon >= weaponeNum)
 				break;
-			if (Player.OutGold() > 0)
+			if (Player.OutGold() - tmp->OutPrise(buy_weapon) >= 0)
 			{
+				Player.Buy_Weapon(tmp->OutPrise(0));
 				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
@@ -735,8 +764,9 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1 + (4 * page);
 			if (buy_weapon >= weaponeNum)
 				break;
-			if (Player.OutGold() > 0)
+			if (Player.OutGold() - tmp->OutPrise(buy_weapon) >= 0)
 			{
+				Player.Buy_Weapon(tmp->OutPrise(0));
 				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
@@ -747,8 +777,9 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1 + (4 * page);
 			if (buy_weapon >= weaponeNum)
 				break;
-			if (Player.OutGold() > 0)
+			if (Player.OutGold() - tmp->OutPrise(buy_weapon) >= 0)
 			{
+				Player.Buy_Weapon(tmp->OutPrise(0));
 				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
@@ -759,8 +790,9 @@ void Manager::Shop_page(string name)
 				buy_weapon = select - 1 + (4 * page);
 			if (buy_weapon >= weaponeNum)
 				break;
-			if (Player.OutGold() > 0)
+			if (Player.OutGold() - tmp->OutPrise(buy_weapon) >= 0)
 			{
+				Player.Buy_Weapon(tmp->OutPrise(0));
 				Player.TakeWeapon(tmp->OutItem(buy_weapon), name);
 			}
 			break;
