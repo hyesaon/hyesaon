@@ -120,6 +120,7 @@ void People::TakeWeapon(Inventory* weapon, string type)
 
 void People::Level_UP(int EXP, int Gold ,int x,int y)
 {
+	int randnum;
 	m_iNowEXP += EXP;
 	m_iGold += Gold;
 	if (m_iNowEXP >= m_iMaxEXP)
@@ -132,7 +133,13 @@ void People::Level_UP(int EXP, int Gold ,int x,int y)
 		m_iLevel++;
 		m_iNowEXP -= m_iMaxEXP;
 		m_iMaxEXP *= 2;
+		randnum = (rand() % 1);
+		if (randnum == 0)
+			m_iMaxLife += 10;
+		else
+			m_iattack += 5;
 	}
+	m_iLife = m_iMaxLife;
 }
 
 bool People::Life(int attack)

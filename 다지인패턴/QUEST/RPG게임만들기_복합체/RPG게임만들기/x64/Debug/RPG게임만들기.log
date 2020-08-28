@@ -1,24 +1,42 @@
 ﻿  Manager.cpp
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\MapDraw.h(20,17): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\MapDraw.h(20,20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(15,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(115,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(126,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(140,2): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(163,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(176,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(272,3): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(284,3): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(312,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(313,10): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(315,6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(316,11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(323,6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(324,11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(439,4): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(450,4): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(557,17): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(513,13): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(515,14): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\이혜선\source\repos\RPG게임만들기_복합체\RPG게임만들기\Manager.cpp(620,4): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-  RPG게임만들기.vcxproj -> C:\Users\이혜선\source\repos\RPG게임만들기_복합체\x64\Debug\RPG게임만들기.exe
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\mapdraw.h(20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(15): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(115): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(126): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(140): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(163): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(176): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(272): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(284): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(312): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(313): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(315): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(316): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(323): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(324): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(439): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(450): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(557): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(513): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(515): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a-03\documents\github\hyesaon\다지인패턴\quest\rpg게임만들기_복합체\rpg게임만들기\manager.cpp(632): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.18362.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+  RPG게임만들기.vcxproj -> C:\Users\A-03\Documents\GitHub\hyesaon\다지인패턴\QUEST\RPG게임만들기_복합체\x64\Debug\RPG게임만들기.exe

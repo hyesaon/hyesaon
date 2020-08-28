@@ -570,6 +570,10 @@ void Manager::Dongeon(int Monnum)
 					DrawMidText("LOSE", m_iWindowX, m_iWindowY / 2 - 3);
 					DrawMidText("WIN", m_iWindowX, m_iWindowY / 2 + 3);
 					Battle_flag = Player.Life(Monster[Monnum].Go_Attack());
+					if (Player.MY_Weapontype("Dagger"))
+					{
+						Battle_flag = Monster[Monnum].Life(Player.Weapon_Attack(m_iWindowX, m_iWindowY / 2 - 1));
+					}
 				}
 				else if (control > randum_attack)
 				{
@@ -583,11 +587,19 @@ void Manager::Dongeon(int Monnum)
 					DrawMidText("LOSE", m_iWindowX, m_iWindowY / 2 - 3);
 					DrawMidText("WIN", m_iWindowX, m_iWindowY / 2 + 3);
 					Battle_flag = Player.Life(Monster[Monnum].Go_Attack());
+					if (Player.MY_Weapontype("Dagger"))
+					{
+						Battle_flag = Monster[Monnum].Life(Player.Weapon_Attack(m_iWindowX, m_iWindowY / 2 - 1));
+					}
 				}
 				else if (control == randum_attack)
 				{
 					DrawMidText("DRAW", m_iWindowX, m_iWindowY / 2 - 3);
 					DrawMidText("DRAW", m_iWindowX, m_iWindowY / 2 + 3);
+					if (Player.MY_Weapontype("Dagger"))
+					{
+						Battle_flag = Monster[Monnum].Life(Player.Weapon_Attack(m_iWindowX, m_iWindowY / 2 - 1));
+					}
 				}
 
 				if (Player.MY_Weapontype("Wand"))
